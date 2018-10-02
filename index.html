@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126727035-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-126727035-1');
+    </script>
+
+    <!-- Your app title -->
+    <title>🤔 💸</title>
+
+    <meta name="description" content="Emoji expense tracker.">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">-->
+    <meta name="theme-color" content="#006400">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="🤔 💸">
+
+    <!-- Path to Framework7 Library CSS -->
+    <link rel="stylesheet" href="libs/framework7.min.css">
+    <link rel="stylesheet" href="libs/framework7.keypad.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="libs/normalize.css"> <!-- ¿Será necesario? -->
+    <link rel="stylesheet" href="my-app.css?0">
+
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+    <link rel="manifest" href="manifest.json"/>
+
+    <link rel="apple-touch-icon" href="images/icons-48.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/icons-72.png">
+    <link rel="apple-touch-icon" sizes="96x96" href="images/icons-96.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/icons-144.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="images/icons-192.png">
+
+    <!-- Tile icon for Windows 8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/icons-144.png">
+    <meta name="msapplication-TileColor" content="#3f51b5">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Default twitter cards -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@username">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="my-app">
+    <meta property="og:image" content="images/icons-144.png" />
+    
+    <!-- Forzar reload-->
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0" />
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+    
+  </head>
+  <body>
+    <!-- App root element -->
+    <div id="app">
+    <!-- Statusbar overlay -->
+    <div class="statusbar"></div>
+
+    <!-- Left panel with cover effect-->
+    <div class="panel panel-left panel-cover">
+        <div class="view">
+          <div class="page">
+            <div class="navbar">
+              <div class="navbar-inner">
+                <div class="title">⚙️</div>
+              </div>
+            </div>
+            <div class="page-content">
+                <div  class="block-title" style="font-size: 18px; line-height: 26px; margin: 5px 5px 10px;";>🚧 0.1.0</div>
+                  <div class="block">
+                    <div id ="blockppto" class="block-header" style="font-size: 18px; line-height: 26px; margin: 5px 5px 10px;";>💰</div>
+                    <div class="list inline-labels no-hairlines-md">
+                    <ul>
+                      <li>
+                        <div class="item-content item-input">
+                          <div class="item-inner">
+                            <div class="item-title item-label">💰🏠❓</div>
+                            <div class="item-input-wrap">
+                              <input id="bhouse" type="number" name="bhouse" onchange="confirmbdgt('house')" >
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                          <div class="item-content item-input">
+                            <div class="item-inner">
+                              <div class="item-title item-label">💰🎓❓</div>
+                              <div class="item-input-wrap">
+                                <input id="bschool" type="text" name="bschool" onchange="confirmbdgt('school')">
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="item-content item-input">
+                            <div class="item-inner">
+                              <div class="item-title item-label">💰🚗❓</div>
+                              <div class="item-input-wrap">
+                                <input id="bcar" type="text" name="bcar" onchange="confirmbdgt('car')">
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="item-content item-input">
+                            <div class="item-inner">
+                              <div class="item-title item-label">💰😋❓</div>
+                              <div class="item-input-wrap">
+                                <input id="bfood" type="text" name="bfood" onchange="confirmbdgt('food')">
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                            <div class="item-content item-input">
+                              <div class="item-inner">
+                                <div class="item-title item-label">💰👕❓</div>
+                                <div class="item-input-wrap">
+                                  <input id="bclothes" type="text" name="bclothes" onchange="confirmbdgt('clothes')">
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="item-content item-input">
+                              <div class="item-inner">
+                                <div class="item-title item-label">💰🎉❓</div>
+                                <div class="item-input-wrap">
+                                  <input  id="bparty" type="text" name="bparty" onchange="confirmbdgt('party')">
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li>
+                              <div class="item-content item-input">
+                                <div class="item-inner">
+                                  <div class="item-title item-label">💰📱❓</div>
+                                  <div class="item-input-wrap">
+                                    <input id="btech" type="text" name="btech" onchange="confirmbdgt('tech')">
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="item-content item-input">
+                                <div class="item-inner">
+                                  <div class="item-title item-label">💰🎁❓</div>
+                                  <div class="item-input-wrap">
+                                    <input id="bgifts" type="text" name="bgifts" onchange="confirmbdgt('gifts')">
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                                <div class="item-content item-input">
+                                  <div class="item-inner">
+                                    <div class="item-title item-label">💰️️👩‍⚕️❓</div>
+                                    <div class="item-input-wrap">
+                                      <input id="bdoctor" type="text" name="bdoctor" onchange="confirmbdgt('doctor')">
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="item-content item-input">
+                                  <div class="item-inner">
+                                    <div class="item-title item-label">💰🤷❓</div>
+                                    <div class="item-input-wrap">
+                                      <input id="bother" type="text" name="bother" onchange="confirmbdgt('other')">
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                    </ul>
+                  </div>
+              </div>
+              <div class="block">
+                  <div id="blockexp" class="block-header" style="font-size: 18px; line-height: 26px; margin: 5px 5px 10px;";>💸</div>
+                  <div class="list inline-labels no-hairlines-md">
+                    <ul>
+                      <li>
+                          <button class="col button button-big" onclick="eraseAccts()">💸  ↘️    🗄️</button>
+                      </li>
+                    </ul>
+                  </div>  
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Right panel with cover effect-->
+    <div class="panel panel-right panel-cover">
+        <div class="view">
+          <div class="page">
+            <div class="navbar">
+              <div class="navbar-inner">
+                <div class="title">🤓</div>
+              </div>
+            </div>
+            <div class="page-content">
+              <div  class="block-title" style="font-size: 18px; line-height: 26px; margin: 5px 5px 10px;";>🚧 0.1.0</div>
+                <div class="block block-strong tablet-inset">
+                  <p>Emojis are an universal language, we aim to bring a new experience with this textless app, discover how to use it is part of the fun.</p>
+                  <p>The app is in development and we will add new exciting functionalities. For now, app is "As-Is", no warranties.</p>
+                  <p>This app is a Progressive Web App (PWA) that can be installed in your homescreen. On iOS open app on Safari, click Share and then Add to Home Screen.</p>
+                  <p>Data is stored locally (in your device). Data export is in development.</p>
+                  <p>App uses Google Analytics to get usage ststistics, none of your personal information is transmitted to the cloud/web.</p>
+                </div>
+            </div>  
+          </div>
+        </div>
+      </div>
+      
+      <!-- Your main view, should have "view-main" class -->
+      <div class="view view-main">
+        <!-- Initial Page, "data-name" contains page name -->
+        <div data-name="home" class="page">
+
+          <!-- Top Navbar -->
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="left">
+                  <a href="#" class="link panel-open" data-panel="left">
+                      ⚙️
+                  </a>
+              </div>
+              <div class="title">🤔 💸</div>
+              <div class="right">
+                  <a href="#" class="link panel-open" data-panel="right">
+                      🤓
+                  </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Scrollable page content -->
+          <div class="page-content" style="background-color: #e5f1e2;">
+
+            <div id="money" >
+                <div id="total">💲</div>
+                <div id="cuantas" style="font-size: 16px">.</div>
+            </div>    
+
+            <div class="row">
+              <div class="col text-align-center">
+                <div
+                  id = "house"
+                  class="gauge gauge-init"
+                  data-type="semicircle"
+                  data-value="0"
+                  data-value-text="🏠"
+                  data-value-font-size="51"
+                  data-value-text-color="#000000"
+                  data-label-text="$"
+                  data-label-text-color="#000000"
+                  data-border-color="Green"
+                  data-border-width="30"
+                  data-border-bg-color="#aaaaaa"
+                  onclick = "doSomething('house');"
+                ></div>
+              </div>
+              <div class="col text-align-center">
+                <div
+                  id = "school"
+                  class="gauge gauge-init"
+                  data-type="semicircle"
+                  data-value="0"
+                  data-value-text="🎓"
+                  data-value-font-size="51"
+                  data-value-text-color="#000000"
+                  data-label-text="$"
+                  data-label-text-color="#000000"
+                  data-border-color="Green"
+                  data-border-width="30"
+                  data-border-bg-color="#aaaaaa"
+                  onclick = "doSomething('school');"
+                ></div>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col text-align-center">
+                <div
+                  id = "car"
+                  class="gauge gauge-init"
+                  data-type="semicircle"
+                  data-value="0"
+                  data-value-text="🚗"
+                  data-value-font-size="51"
+                  data-value-text-color="#000000"
+                  data-label-text="$"
+                  data-label-text-color="#000000"
+                  data-border-color="Green"
+                  data-border-width="30"
+                  data-border-bg-color="#aaaaaa"
+                  onclick = "doSomething('car');"
+                ></div>
+              </div>
+              <div class="col text-align-center">
+                <div
+                  id = "food"
+                  class="gauge gauge-init"
+                  data-type="semicircle"
+                  data-value="0"
+                  data-value-text="😋"
+                  data-value-font-size="51"
+                  data-value-text-color="#000000"
+                  data-label-text="$"
+                  data-label-text-color="#000000"
+                  data-border-color="Green"
+                  data-border-width="30"
+                  data-border-bg-color="#aaaaaa"
+                  onclick = "doSomething('food');"
+                ></div>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col text-align-center">
+                <div
+                  id = "clothes"
+                  class="gauge gauge-init"
+                  data-type="semicircle"
+                  data-value="0"
+                  data-value-text="👕"
+                  data-value-font-size="51"
+                  data-value-text-color="#000000"
+                  data-label-text="$"
+                  data-label-text-color="#000000"
+                  data-border-color="Green"
+                  data-border-width="30"
+                  data-border-bg-color="#aaaaaa"
+                  onclick = "doSomething('clothes');"
+                ></div>
+              </div>
+              <div class="col text-align-center">
+                <div
+                  id="party"
+                  class="gauge gauge-init"
+                  data-type="semicircle"
+                  data-value="0"
+                  data-value-text="🎉"
+                  data-value-font-size="51"
+                  data-value-text-color="#000000"
+                  data-label-text="$"
+                  data-label-text-color="#000000"
+                  data-border-color="Green"
+                  data-border-width="30"
+                  data-border-bg-color="#aaaaaa"
+                  onclick = "doSomething('party');"
+                ></div>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col text-align-center">
+                <div
+                  id = "tech"
+                  class="gauge gauge-init"
+                  data-type="semicircle"
+                  data-value="0"
+                  data-value-text="📱"
+                  data-value-font-size="51"
+                  data-value-text-color="#000000"
+                  data-label-text="$"
+                  data-label-text-color="#000000"
+                  data-border-color="Green"
+                  data-border-width="30"
+                  data-border-bg-color="#aaaaaa"
+                  onclick = "doSomething('tech');"
+                ></div>
+              </div>
+              <div class="col text-align-center">
+                <div
+                  id = "gifts"
+                  class="gauge gauge-init"
+                  data-type="semicircle"
+                  data-value="0"
+                  data-value-text="🎁"
+                  data-value-font-size="51"
+                  data-value-text-color="#000000"
+                  data-label-text="$"
+                  data-label-text-color="#000000"
+                  data-border-color="Green"
+                  data-border-width="30"
+                  data-border-bg-color="#aaaaaa"
+                  onclick = "doSomething('gifts');"
+                ></div>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col text-align-center">
+                <div
+                  id = "doctor"
+                  class="gauge gauge-init"
+                  data-type="semicircle"
+                  data-value="0"
+                  data-value-text="👩‍⚕️"
+                  data-value-font-size="51"
+                  data-value-text-color="#000000"
+                  data-label-text="$"
+                  data-label-text-color="#000000"
+                  data-border-color="Green"
+                  data-border-width="30"
+                  data-border-bg-color="#aaaaaa"
+                  onclick = "doSomething('doctor');"
+                ></div>
+              </div>
+              <div class="col text-align-center">
+                <div
+                  id = "other"
+                  class="gauge gauge-init"
+                  data-type="semicircle"
+                  data-value="0"
+                  data-value-text="🤷"
+                  data-value-font-size="51"
+                  data-value-text-color="#000000"
+                  data-label-text="$"
+                  data-label-text-color="#000000"
+                  data-border-color="Green"
+                  data-border-width="30"
+                  data-border-bg-color="#aaaaaa"
+                  onclick = "doSomething('other');"
+                ></div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="libs/framework7.min.js"></script>
+    <!-- <script src="libs/framework7.keypad.min.js"></script>-->
+    <script type="text/javascript" src="libs/pouchdb-7.0.0.min.js"></script>
+    
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="my-app.js?2"></script>
+
+  </body>
+</html>

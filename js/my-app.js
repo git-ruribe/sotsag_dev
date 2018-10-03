@@ -110,6 +110,7 @@ $$('.panel-left').on('panel:opened', function () {
 });
 
 function cattoemoji(cat) {
+
   switch(cat) {
     case "house":
     emotics = "🏠";
@@ -262,6 +263,11 @@ function populateAcc() {
 };
 
 function graba(a){
+
+  function s4() {
+    return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+  }
+
   if (a=='money') {
   var lana = toEmoticon($$('#lana').val());
   console.log($$('#pop'));
@@ -281,7 +287,8 @@ function graba(a){
             populateAcc();
 
             mov = {};
-            mov._id = "mov_" + Number(cuentas.cuantas);
+            mov._id = "mov_" + $$('#today').val() + " !"+ s4()+s4();
+            mov.contador = "mov_" + Number(cuentas.cuantas);
             mov.timestamp = $$('#today').val();
             mov.description = $$('#memo').val();
             mov.amount = $$('#lana').val();

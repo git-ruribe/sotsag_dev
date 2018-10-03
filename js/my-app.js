@@ -18,12 +18,7 @@ var app = new Framework7({
     swipe: 'left',
   },
   // Add default routes
-  routes: [
-    {
-      path: '/about/',
-      url: 'about.html',
-    },
-  ],
+  routes: routes,
   // ... other parameters
 });
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-
+    <!-- python -m SimpleHTTPServer 8000 -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126727035-1"></script>
     <script>
@@ -9,11 +9,11 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'UA-126727035-1');
+      gtag('config', 'UA-126727035-2');
     </script>
 
     <!-- Your app title -->
-    <title>🤔 💸</title>
+    <title>1f600.app</title>
 
     <meta name="description" content="Emoji expense tracker.">
     <meta charset="utf-8">
@@ -25,7 +25,7 @@
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="🤔 💸">
+    <meta name="apple-mobile-web-app-title" content="1f600.app">
 
     <!-- Path to Framework7 Library CSS -->
     <link rel="stylesheet" href="libs/framework7.css">
@@ -251,7 +251,9 @@
 
             <div id="money" >
                 <div id="total">💲</div>
-                <div id="cuantas" style="font-size: 16px">.</div>
+                <a class="item-content item-link" href="/detail/">
+                  <div id="cuantas" style="font-size: 16px; color:black">.</div>
+                </a>  
             </div>    
 
             <div class="row">
@@ -450,7 +452,8 @@
     <script type="text/javascript" src="libs/pouchdb-7.0.0.min.js"></script>
     
     <!-- Path to your app js-->
-    <script type="text/javascript" src="my-app.js"></script>
+    <script src="js/routes.js"></script>
+    <script type="text/javascript" src="js/my-app.js?0"></script>
 
   </body>
 </html>

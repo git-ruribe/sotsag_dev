@@ -294,9 +294,9 @@ function graba(a){
             mov.amount = $$('#lana').val();
             mov.category = a;
             db.put(mov);
+            ga('send', 'event', 'Expense', 'New', a);
        }
       });
-    ga('send', 'event', 'Expense', 'New', a);
   }
 }
 

@@ -153,6 +153,7 @@ function confirmbdgt(cat) {
     presupuesto[cat] = doc[cat];
     db.put(doc);
     readbudget();
+    ga('send', 'event', 'Budget', 'Change', cat);
   }, function(){
     console.log("Regresar valor anterior")
     $$('#b'+cat).val(presupuesto[cat])
@@ -288,6 +289,7 @@ function graba(a){
             db.put(mov);
        }
       });
+    ga('send', 'event', 'Expense', 'New', a);
   }
 }
 
@@ -437,6 +439,7 @@ function eraseAccts() {
             cuentas = doc;
             populateAcc();
             fillbudget();
+            ga('send', 'event', 'Expense', 'Reset');
        }
       });
   }, function(){

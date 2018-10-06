@@ -7,8 +7,10 @@ function readdatax() {
     endkey: 'mov\ufff0'
     }).then(function (result) {
       result.rows.forEach(element => {
-        element.doc.icon = cattoemoji(element.doc.category)
+        element.doc.icon = cattoemoji(element.doc.category);
         element.doc.htmlid = "lin" + i;
+        element.doc.amount = myformat(element.doc.amount);
+        element.doc.buscar = cattoemoji(element.doc.category) + " " + element.doc.timestamp + " " + element.doc.description ;
         i++;
       });
 var virtualList = app.virtualList.create({
@@ -20,7 +22,7 @@ var virtualList = app.virtualList.create({
   searchAll: function (query, items) {
     var found = [];
     for (var i = 0; i < items.length; i++) {
-      if (items[i].title.toLowerCase().indexOf(query.toLowerCase()) >= 0 || query.trim() === '') found.push(i);
+      if (items[i].doc.buscar.toLowerCase().indexOf(query.toLowerCase()) >= 0 || query.trim() === '') found.push(i);
     }
     return found; //return array with mathced indexes
   },

@@ -109,6 +109,14 @@ $$('.panel-left').on('panel:opened', function () {
   console.log('Panel left: opened');
 });
 
+function myformat(n) {
+  temp = Number(n).toFixed(2)
+  if (temp * 100 % 100 == 0) {
+    temp = Number(n).toFixed(0)
+  }
+  return temp
+}
+
 function cattoemoji(cat) {
 
   switch(cat) {
@@ -243,7 +251,7 @@ function calcpct(cat) {
       pct.back = "#aaaaaa";
     }
   }
-  app.gauge.get('#'+cat).update({value:pct.value, borderColor:pct.color, borderBgColor:pct.back, labelText: '$ '+cuentax.toString() +'/ $ '+presupuestox.toString() });
+  app.gauge.get('#'+cat).update({value:pct.value, borderColor:pct.color, borderBgColor:pct.back, labelText: '$ '+myformat(cuentax).toString() +'/ $ '+myformat(presupuestox).toString() });
 
 }
 
@@ -417,7 +425,8 @@ function doSomething(a){
   });
  
   dynamicPopover.open();
-  document.querySelector("#today").valueAsDate = new Date();
+  d= new Date()
+  document.querySelector("#today").valueAsDate = new Date(d.getFullYear(), d.getMonth(), d.getDate(), 12);
 }
 
 function eraseAccts() {

@@ -14,5 +14,9 @@ var routes = [
         readdatax();
       }
     }
+  },
+  {
+    path: '/transfer/',
+    url: './transfer.html',
   }
 ];

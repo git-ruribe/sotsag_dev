@@ -83,6 +83,8 @@ function editRecord(htmlid, id, rev, timestamp, amount, description, category){
                             '<button class="col button button-big color-gray popover-close" style="margin-left: 5px;" onclick="actualiza(\''+id+'\', \''+rev+'\', \''+category+'\', \''+amount+'\')">✅</button>'+
                             '<button class="col button button-big color-gray link popover-close" style="margin-right: 5px;">❌</button>'+
                         '</p>'+
+                        '<p class="row inset">'+
+                        '<button class="col button button-big color-gray popover-close" style="margin-left: 5px;" onclick="borra(\''+id+'\', \''+rev+'\', \''+category+'\', \''+amount+'\')">🗑️</button>'+                    '</p>'+
                     '</div>'+
                 '</div>'+
               '</div>',
@@ -130,8 +132,40 @@ function actualiza(id, rev, a, lana_ant){
             mov.description = $$('#memo').val();
             mov.amount = $$('#lana').val();
             mov.category = a;
-            db.put(mov);
+            db.put(mov).then(function(response) {
+              readdatax();
+            });
        }
       });
+    
     ga('send', 'event', 'Expense', 'Edit', a);
+}
+
+function borra(id, rev, a, lana_ant){
+  doc = cuentas;
+  doc[a] = doc[a] - lana_ant;
+  doc.total = doc.total - lana_ant;
+  doc.cuantas = doc.cuantas - 1;
+  db.put(doc);
+
+  db.get('accounts',function(err, doc) {
+    if(err) {
+      console.log("Error al grabar movimiento");
+     } else {
+          cuentas = doc;
+          populateAcc();
+
+          mov = {};
+          mov._id = id;
+          mov._rev = rev;
+
+          app.dialog.confirm( "🗑️  ❓", "⚠️ ⚠️ ⚠️" ,  function(){
+            db.remove(mov).then(function(response) {
+              readdatax();
+            });
+          });
+        }
+    });
+  readdatax();
+  ga('send', 'event', 'Expense', 'Erase', a);
 }

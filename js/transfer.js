@@ -73,6 +73,7 @@ function exporta() {
 
     doc = cuentas;
     var i = 0;
+    var ok = 0;
 
     newdata.forEach(row => {
         var columna = row.split(",")
@@ -104,6 +105,7 @@ function exporta() {
           if (err) {
             return console.log(err);
           } else {
+            ok++
             doc.total = doc.total + (Number(lana) || 0);
             doc[category] = doc[category] + lana;
             doc.cuantas = doc.cuantas + 1;
@@ -117,6 +119,9 @@ function exporta() {
                  } else {
                       cuentas = doc;
                       populateAcc();
+                      app.dialog.alert('✍️ : ' + ok,'📲', function() {
+                      app.router.back('/',{animate: true});
+                      });
                  }
                 });
             });

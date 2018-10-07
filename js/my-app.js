@@ -1,6 +1,6 @@
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
-    navigator.serviceWorker.register('serviceworker.js')
+    navigator.serviceWorker.register('sw.js')
     .then(function(registration){
       console.log('Registered:',registration);
     }).catch(function(error){

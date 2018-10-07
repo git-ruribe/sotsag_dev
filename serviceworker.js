@@ -1,3 +1,4 @@
+// https://developers.google.com/web/fundamentals/primers/service-workers/high-performance-loading
 self.addEventListener('fetch', event => {
   if (event.request.mode === 'navigate') {
     // See /web/fundamentals/getting-started/primers/async-functions

@@ -8,9 +8,4 @@ if (workbox) {
   console.log(`Boo! Workbox didn't load 😬`);
 }
 
-//workbox.routing.registerRoute(
-//    new RegExp('.*\.js'),
-//    workbox.strategies.StaleWhileRevalidate()
-//  );
-
 workbox.precaching.precacheAndRoute([])

@@ -30,7 +30,7 @@ function exporta() {
       case "🏠":
       emotics = "house";
       break;
-      case "🎓school":
+      case "🎓":
       emotics = "school";
       break;
       case "🚗":

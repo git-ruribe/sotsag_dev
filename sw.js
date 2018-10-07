@@ -8,11 +8,6 @@ if (workbox) {
   console.log(`Boo! Workbox didn't load 😬`);
 }
 
-//workbox.routing.registerRoute(
-//    new RegExp('.*\.js'),
-//    workbox.strategies.StaleWhileRevalidate()
-//  );
-
 workbox.precaching.precacheAndRoute([
   {
     "url": "detail.html",
@@ -48,7 +43,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "index.html",
-    "revision": "fa3188aa110e0c2451e95ec846486e99"
+    "revision": "6ba6d383ed8bfe79acc5be18ac1f41d7"
   },
   {
     "url": "js/detail.js",
@@ -64,7 +59,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/transfer.js",
-    "revision": "2fd3e062fd24dc540bc0b23fe805e385"
+    "revision": "dc72112dbf068cb25e68bd2c55c4040a"
   },
   {
     "url": "libs/framework7.css",
@@ -87,12 +82,8 @@ workbox.precaching.precacheAndRoute([
     "revision": "c812747f9d841a840e7c3c06e7d67af4"
   },
   {
-    "url": "serviceworker.js",
-    "revision": "b96a6dd41bab97b470bcb5026988b72c"
-  },
-  {
-    "url": "sw.js",
-    "revision": "5e4f2dbf330726c9319d984a730c7385"
+    "url": "sw_source.js",
+    "revision": "329385c16f9455a450a80f42231cec13"
   },
   {
     "url": "transfer.html",
@@ -100,6 +91,6 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "workbox-config.js",
-    "revision": "9fb66184c960ce3c30d43bc38c8c739f"
+    "revision": "721e18bea15aca290c446ca4c5b7bcb8"
   }
 ])

@@ -13,6 +13,20 @@
       gtag('config', 'UA-126727035-2');
     </script>
     -->
+
+    <!-- workbox generateSW workbox-config1.js -->
+    <script>
+          if ('serviceWorker' in navigator) {
+          window.addEventListener('load', function() {
+            navigator.serviceWorker.register('sw.js')
+            .then(function(registration){
+              console.log('Registered:',registration);
+            }).catch(function(error){
+              console.log('Registration failed: ',error);
+            });
+          });
+        }
+    </script>
     
     <!-- Google Analytics -->
     <script>
@@ -21,7 +35,12 @@
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-126727035-2', 'auto');
+    ga('create', 'UA-126727035-1', 'auto');
+
+    // Set default value of custom dimension 1 to 'online'
+    // https://developers.google.com/web/tools/workbox/modules/workbox-google-analytics
+    ga('set', 'dimension1', 'online');
+
     ga('send', 'pageview');
     </script>
     <!-- End Google Analytics -->
@@ -45,7 +64,7 @@
     <link rel="stylesheet" href="libs/framework7.css">
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="libs/normalize.css"> <!-- ¿Será necesario? -->
-    <link rel="stylesheet" href="my-app.css?0">
+    <link rel="stylesheet" href="my-app.css">
 
     <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
     <link rel="manifest" href="manifest.json"/>

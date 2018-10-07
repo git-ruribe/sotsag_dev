@@ -1,13 +1,15 @@
 console.log('Hello from sw.js v0.1.1');
 
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.1/workbox-sw.js');
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 if (workbox) {
   console.log(`Yay! Workbox is loaded 🎉`);
+
 } else {
   console.log(`Boo! Workbox didn't load 😬`);
 }
 
+workbox.precaching.suppressWarnings();  
 workbox.precaching.precacheAndRoute([
   {
     "url": "detail.html",
@@ -43,7 +45,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "index.html",
-    "revision": "6ba6d383ed8bfe79acc5be18ac1f41d7"
+    "revision": "5748a4611c6e88d7cb740e6ff8bb4c6f"
   },
   {
     "url": "js/detail.js",
@@ -51,7 +53,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/my-app.js",
-    "revision": "0bc23b53ea66678dc1b177fecbad6017"
+    "revision": "a8efe7fe6a2b8fbb986699bd90a479b0"
   },
   {
     "url": "js/routes.js",
@@ -83,7 +85,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "sw_source.js",
-    "revision": "329385c16f9455a450a80f42231cec13"
+    "revision": "a826737f3af1f01aa8307c5ab94021eb"
   },
   {
     "url": "transfer.html",
@@ -93,4 +95,11 @@ workbox.precaching.precacheAndRoute([
     "url": "workbox-config.js",
     "revision": "721e18bea15aca290c446ca4c5b7bcb8"
   }
-])
+]);
+
+workbox.googleAnalytics.initialize({
+  parameterOverrides: {
+    cd1: 'offline',
+  },
+});
+

@@ -1,14 +1,3 @@
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('sw.js')
-    .then(function(registration){
-      console.log('Registered:',registration);
-    }).catch(function(error){
-      console.log('Registration failed: ',error);
-    });
-  });
-}
-
 var app = new Framework7({
   // App root element
   root: '#app',

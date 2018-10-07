@@ -130,8 +130,8 @@ function exporta() {
         
     })
     ga('send', 'event', 'Expense', 'Import');
-  
-    
-    
-
   }
+
+function gotodetail() {
+  app.router.navigate("/detail/");
+}
